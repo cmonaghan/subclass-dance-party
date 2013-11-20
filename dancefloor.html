@@ -38,9 +38,17 @@
           $('body').append(dancer.$node);
           window.dancers.push(dancer);
         });
+        var _lineUp = true;
         $(".lineUpButton").on("click", function(event){
           for (var i = 0 ; i < window.dancers.length ; i++){
             window.dancers[i].lineUp();
+          }
+          if (_lineUp){
+            $(".lineUpButton").text("keep dancin'");
+            _lineUp = false;
+          } else {
+            $(".lineUpButton").text("line up");
+            _lineUp = true;
           }
         });
       });

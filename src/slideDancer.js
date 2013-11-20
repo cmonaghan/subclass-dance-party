@@ -6,13 +6,7 @@ var SlideDancer = function(top, left, timeBetweenSteps){
 SlideDancer.prototype = Object.create(Dancer.prototype);
 SlideDancer.prototype.constructor = SlideDancer;
 SlideDancer.prototype.step = function(){
-  Dancer.prototype.step.call(this);
-  if ( this.left > $("body").width() ){
-    this.left = 0-this.$node.width();
-  } else {
-    this.left = this.left + 25;
-  }
-  this.setPosition(this.top, this.left);
+    Dancer.prototype.step.call(this);
 };
 
 var SkateboardDancer = function(top, left, timeBetweenSteps){
@@ -22,4 +16,8 @@ var SkateboardDancer = function(top, left, timeBetweenSteps){
 };
 SkateboardDancer.prototype = Object.create(SlideDancer.prototype);
 SkateboardDancer.prototype.constructor = SkateboardDancer;
+SkateboardDancer.prototype.lineUp = function (){
+  var middle = $("body").width()/2;
+  this.$node.css('left', middle+'px');
+}
 

@@ -13,6 +13,10 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
+.lineUpButton{
+  padding:5px 12px;
+  float:left;
+}
 .topbar{
   height:32px;
   background-color: #555;
@@ -22,4 +26,19 @@ body, a:link, a:visited, a:active{
 }
 .dancer{
   position:absolute;
+}
+.skateboardDancer{
+  -webkit-animation: move 3s ease infinite;
+}
+
+@-webkit-keyframes move {
+  49% {
+     left:-100px;
+  }
+  2% {
+    -webkit-transform: scaleX(-1);
+  }
+  49% {
+     left: 100px;
+  }
 }
